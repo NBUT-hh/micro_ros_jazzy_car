@@ -1,0 +1,35 @@
+# ========== ROS2 工作空间生成物（colcon build 产生，可重新生成） ==========
+xuegeros_ws/build/
+xuegeros_ws/install/
+xuegeros_ws/log/
+
+# 保存的地图（map_saver 生成，换环境可重新扫）
+xuegeros_ws/map_*.pgm
+xuegeros_ws/map_*.yaml
+
+# 源码压缩包（冗余，源码已解压）
+*.zip
+
+# ========== Python ==========
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# ========== ESP-IDF 固件生成物 ==========
+# 托管依赖组件（由 idf.py 根据 dependencies.lock 自动拉取）
+managed_components/
+# 运行时生成的完整配置（sdkconfig.defaults 会保留，sdkconfig/sdkconfig.old 不传）
+sdkconfig
+sdkconfig.old
+# ESP-IDF 编译产物
+build/
+
+# ========== 编辑器 / 系统 ==========
+.vscode/
+*.log
+.DS_Store
+
+# ========== 敏感配置（含 API Key，绝不提交） ==========
+# 如需分享配置结构，可复制成 asr.yaml.example 并删掉 key 再提交
+**/config/asr.yaml
