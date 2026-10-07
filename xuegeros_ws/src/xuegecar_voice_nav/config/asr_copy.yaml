@@ -1,0 +1,31 @@
+# 云端语音识别 API 配置（OpenAI 兼容格式）
+#
+#https://bailian.console.aliyun.com/cn-beijing/model/settings/api-key获取
+api_key: 
+base_url: "https://llm-otb5a8oiq2jfy41y.cn-beijing.maas.aliyuncs.com/api/v1"
+
+# 语音识别模型名：一句话识别（实时）用 paraformer-realtime-v2；
+# 录音文件识别（批量，需公网 URL）用 paraformer-v2。
+model: "paraformer-realtime-v2"
+
+# LLM 语义理解（Qwen，走 OpenAI 兼容的 /chat/completions 接口）
+llm_model: "qwen-plus"
+
+# 视觉大模型（Qwen-VL，拍照描述用）
+vision_model: "qwen-vl-plus"
+camera_url: "http://10.253.14.141:81/"
+
+# TTS 语音合成
+tts_model: "cosyvoice-v1"      # 或 sambert-zhichu-v1
+tts_voice: "longxiaochun"      # cosyvoice 常用音色；sambert 用 zhichu
+
+# 唤醒词检测（sherpa-onnx KWS，本地离线）
+wake_word: "小白"
+# 唤醒词的拼音 token（声母+韵母，空格分隔）。该模型按拼音建模，不能直接写汉字。
+# 「小白」= x iǎo b ái；若换唤醒词，需按 tokens.txt 拼出对应 token。
+wake_word_tokens: "x iǎo b ái"
+kws_dir: "/home/huanghao/-ros2--main/软件/1.源码/xuegeros_ws/src/xuegecar_voice_nav/models/kws"
+
+# 唤醒后播的应答音 / 录音没内容时的结束音（文字内容可随意改）
+wake_prompt: "我在，请说"
+bye_prompt: "有需要再叫我"
